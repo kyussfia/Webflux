@@ -25,7 +25,7 @@ public interface ReactiveObjectRepository<T, ID> extends org.springframework.dat
      * @return {@link Flux} emitting the found entities.
      * @throws IllegalArgumentException in case the given {@code property} is {@literal null}.
      */
-    <S extends T> Flux<S> findBy(String property, Object value);
+    Flux<T> findBy(String property, Object value);
 
     /**
      * Find entities by the given map.
@@ -37,7 +37,7 @@ public interface ReactiveObjectRepository<T, ID> extends org.springframework.dat
      * @return {@link Flux} emitting the found entities.
      * @throws IllegalArgumentException in case the given {@code value} is {@literal null}.
      */
-    <S extends T> Flux<S> findBy(Map<String, Object> value);
+    Flux<T> findBy(Map<String, Object> value);
 
     /**
      * Find entities by the given maps.
@@ -49,7 +49,7 @@ public interface ReactiveObjectRepository<T, ID> extends org.springframework.dat
      * @return {@link Flux} emitting the found entities.
      * @throws IllegalArgumentException in case the given {@code value} is {@literal null}.
      */
-    <S extends T> Flux<S> findBy(Iterable<Map<String, Object>> value);
+    Flux<T> findBy(Iterable<Map<String, Object>> value);
 
     /**
      * Find entities by the given map conditions to identify, supplied by a {@link Publisher}.
@@ -60,5 +60,5 @@ public interface ReactiveObjectRepository<T, ID> extends org.springframework.dat
      * @return {@link Flux} emitting the found entities.
      * @throws IllegalArgumentException in case the given {@code value} is {@literal null}.
      */
-    <S extends T> Flux<S> findBy(Publisher<Map<String, Object>> conditionStream);
+    Flux<T> findBy(Publisher<Map<String, Object>> conditionStream);
 }
