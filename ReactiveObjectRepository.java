@@ -1,5 +1,3 @@
-package hu.gds.dashboard.dal.repository;
-
 import org.reactivestreams.Publisher;
 import org.springframework.data.repository.NoRepositoryBean;
 import reactor.core.publisher.Flux;
